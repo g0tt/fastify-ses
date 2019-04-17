@@ -1,0 +1,15 @@
+{
+  "name": "fastify-ses",
+  "version": "0.0.1",
+  "description": "Implements aws-ses into fastify.",
+  "main": "index.js",
+  "author": "gott",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.438.0",
+    "fastify": "^2.2.0"
+  },
+  "dependencies": {
+    "fastify-plugin": "^1.5.0"
+  }
+}
