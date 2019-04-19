@@ -1,5 +1,9 @@
 # fastify-ses
 ## Usage
+### Add AWS ACCESS KEYS
+[Docs](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-shared.html)
+
+### Register plugin
 ```javascript
 fastify.register(plugin, {
   config: {
@@ -8,6 +12,7 @@ fastify.register(plugin, {
 });
 ```
 
+### Send email
 ```javascript
 // in fastify.get
 const params = {
