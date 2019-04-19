@@ -14,7 +14,19 @@ module.exports = fp(function(fastify, opts, next) {
   AWS.config.update({region: config.region});
 
   fastify.decorate('ses', {
-    send(params) {
+    async send(params) {
+      if (typeof params.to !== 'string') {
+        throw new Error('Invalid param: to');
+      }
+      if (typeof params.from !== 'string') {
+        throw new Error('Invalid param: from');
+      }
+      if (typeof params.subject !== 'string') {
+        throw new Error('Invalid param: subject');
+      }
+      if (typeof params.text !== 'string') {
+        throw new Error('Invalid param: text');
+      }
       var sesParams = {
         Destination: {
           ToAddresses: [
@@ -38,15 +50,14 @@ module.exports = fp(function(fastify, opts, next) {
       // TODO: Add additional params
 
       var sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(sesParams).promise();
-
-      sendPromise.then(
+      return sendPromise.then(
         function(data) {
-          console.log('Email sent: ' + data.MessageId);
-        }).catch(
-          function(err) {
-            console.error(err, err.stack);
-        });
-      },
-    });
-    next();
+          return data.MessageId;
+      }).catch(
+        function(err) {
+          throw err;
+      });
+    },
+  });
+  next();
 });
