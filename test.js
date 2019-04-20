@@ -4,7 +4,6 @@ const Fastify = require('fastify');
 const request = require('request');
 const plugin = require('./index.js');
 const t = require('tap');
-const params = require('./config.json');
 
 t.only("Register plugin without config", t => {
   const fastify = Fastify();
@@ -54,6 +53,7 @@ t.only("Register plugin", t => {
 
 t.test("Send email", t => {
   t.plan(2);
+  const params = require('./config.json');
   const fastify = Fastify();
   fastify.register(plugin, {
     config: {
