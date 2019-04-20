@@ -1,4 +1,5 @@
 # fastify-ses
+[![npm version](https://badge.fury.io/js/fastify-ses.svg)](https://badge.fury.io/js/fastify-ses)
 [![Build Status](https://travis-ci.org/g0tt/fastify-ses.svg?branch=master)](https://travis-ci.org/g0tt/fastify-ses)
 ## Installation
 ```bash
