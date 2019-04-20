@@ -1,4 +1,5 @@
 # fastify-ses
+[![Build Status](https://travis-ci.org/g0tt/fastify-ses.svg?branch=master)](https://travis-ci.org/g0tt/fastify-ses)
 ## Usage
 ### Add AWS ACCESS KEYS
 [Docs](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-shared.html)
