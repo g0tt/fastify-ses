@@ -1,0 +1,6 @@
+{
+  "to": "mail@example.com",
+  "from": "support@yourdomain.jp",
+  "subject": "Test email from fastify",
+  "text": "Hello from fastify!!"
+}
