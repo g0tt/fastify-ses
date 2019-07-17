@@ -1,6 +1,6 @@
 {
   "name": "fastify-ses",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Implements aws-ses into fastify.",
   "main": "index.js",
   "repository": {
